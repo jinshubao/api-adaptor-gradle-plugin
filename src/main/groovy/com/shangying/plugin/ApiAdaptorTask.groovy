@@ -117,11 +117,12 @@ class ApiAdaptorTask extends DefaultTask {
                 if (myConfig.adaptorContent) {
                     def methodContent = new StringBuffer()
                     methodContent.append(Constant.tab_2).append("def url = '${requestMapping}'").append(Constant.newLine)
-                    methodContent.append(Constant.tab_2).append("//TODO 自己实现代码").append(Constant.newLine)
-                    methodContent.append(Constant.tab_2).append("def object = ${myConfig.httpObjectInstanceName}.")
+                    methodContent.append(Constant.tab_2).append("//TODO").append(Constant.newLine)
+                    methodContent.append(Constant.tab_2).append("//def object = ${myConfig.httpObjectInstanceName}.")
                             .append(method == "get" ? myConfig.httpObjectInstanceGetMethodName : myConfig.httpObjectInstancePostMethodName)
                             .append("(url, null, null)").append(Constant.newLine)
-                    methodContent.append(Constant.tab_2).append("return object").append(Constant.newLine)
+                    methodContent.append(Constant.tab_2).append("//return object").append(Constant.newLine)
+                    methodContent.append(Constant.tab_2).append("return null")
                     classMethod.content = methodContent.toString()
                 }
 
